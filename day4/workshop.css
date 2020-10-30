@@ -1,0 +1,79 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /*all document in the file is formatted as the following */
+    background: aliceblue;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 70%;
+    border: 3px solid gray;
+    border-radius: 12px;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+/* Control the left side */
+
+.left {
+    left: 0;
+}
+
+
+/* Control the right side */
+
+.right {
+    right: 0;
+}
+
+div.left input {
+    vertical-align: middle;
+    margin-left: 15%;
+    box-sizing: border-box;
+}
+
+div.right input {
+    vertical-align: middle;
+    margin-left: 15%;
+    box-sizing: border-box;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    text-align: center;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#address {
+    padding: 36px;
+}
+
+div.reset {
+    position: relative;
+    bottom: 0;
+    margin: 15%;
+}
+
+div.submit {
+    position: relative;
+    bottom: 0;
+    margin: 15%;
+}
