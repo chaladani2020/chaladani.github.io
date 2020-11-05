@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //exersice 1
+        function filterstring(str, banned) {
+            var string = "";
+            str.filter(function(ele, i, arr) {
+                return !(ele === banned) ? string += ele + " " : "";
+            });
+            return string;
+        }
+        let arr = Array("This", "house", "is", "not", "nice!");
+        console.log(filterstring(arr, 'not'));
+        //exersice 2
+        function buublesortstr(arr) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+
+                }
+            }
+            return arr;
+        }
+        let ar = Array(6, 4, 0, 3, -2, 1);
+        console.log(buublesortstr(ar));
+        //exersice 3
+        let Person = {
+            "name": "Professor Xing",
+            "teach": function(subject) {
+                console.log(this.name + " is teaching " + subject);
+            }
+        }
+        let Teacher = Object.create(Person);
+        Teacher.teach("Wap");
+
+        function person1(name) {
+            this.name = name;
+        };
+        let Teach = new person1("Professor Xing");
+        person1.prototype.teach = function(subject) {
+            return this.name + " is now teaching" + subject;
+        }
+        console.log(Teach.teach(" WAP"));
+        // question 4 using function construct
+        function Person2() {
+            this.name = 'Chala';
+            this.age = 2
+        }
+        Person2.prototype.greeting = function() {
+            console.log('\nGreetings, my name is ' + this.name + ' and I am ' + this.age + ' years old');
+        }
+        Person2.prototype.salute = function() {
+            console.log('\nGood morning!, and in case I dont see you, good afternoon, good evening and goodnight!');
+        }
+
+        function Student2() {
+            Person2.call(this);
+            this.major = 'MWA';
+        }
+        Student2.prototype = Object.create(Person2.prototype);
+        Student2.prototype.greeting = function() {
+            console.log('\nHey, my name is ' + this.name + ' and I am studying ' + this.major);
+        }
+
+        function Professor2() {
+            Person2.call(this)
+            this.department = 'ComPro'
+        }
+        Professor2.prototype = Object.create(Person2.prototype);
+        Professor2.prototype.greeting = function() {
+            console.log("\nGreeting from Proffessor");
+        }
+        Professor2.prototype.salute = function() {
+            console.log('\nGood day, my name is ' + this.name + ' and I am in the ' + this.department + ' department');
+        }
+        var student = new Student2();
+        student.greeting();
+        student.salute();
+
+        var proffessor = new Professor2();
+        proffessor.greeting();
+        proffessor.salute();
+    </script>
+</body>
+
+</html>
